@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 require_once "../config/database.php";
 $errors = [];
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -35,9 +38,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if(!password_verify($password, $user['password'])){
         die("incorrect password");
-    }else{
-        echo "welcome back";
     }
+
+    $_SESSION['user_id'] = $user['id'];
+    $_SeSSION['username'] = $user['username'];
+
+
+    header("location:dashboard.php");
+    exit;
 
 }
 ?>
