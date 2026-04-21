@@ -8,5 +8,5 @@ if(!isset($_SESSION['user_id'])) {
 }
 ?>
 
-<h1>welcome <?php echo $_SeSSION['username'];?></h1>
+<h1>welcome <?php echo $_SESSION['username'];?></h1>
 <a href= "logout.php">Logout</a>
